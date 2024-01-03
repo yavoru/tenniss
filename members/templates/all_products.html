@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+{%block title%}All Members{%endblock%}
+{%block content%}
+
+
+	<ul style="list-style: none;">
+		<div class="container-fluid">
+			<h1><a style="text-decoration:none;" href="/">Home</a></h1>
+			<h1> Member </h1>
+			<div class="row">
+				
+				<button class="btn btn-primary" type="button" onclick="window.location.href='find-new'">Find new members</button><div style="height:15px;"></div>
+				{% for id in myproducts %}
+
+
+					<div class="card col-3" style="width:18rem;">
+						{% if id.image %}
+						<img src="{{id.image.url}}" class="card-img" alt="vui long cap nhat anh" width="300" height="250">
+						{% else %}
+						<img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" class="card-img" width="300" height="250">
+						{% endif %}
+						<div class="card-body">
+							<h5 class="card-title">{{id.name}} </h5>
+							<h6 class="card-subtitle mb-2 text-muted ">{{id.quantity}}</h6>
+							<p class="card-text">{{id.create_date}}</p>
+							
+							<a class="btn btn-primary" href="details/{{id.id}}">Details</a>
+						</div>
+					</div>
+
+				{% endfor %}
+				</div>
+		</div>
+	</ul>
+
+{% endblock %}

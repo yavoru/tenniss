@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+{% block title %}
+<table border='5'>
+    <tr>
+    <th>ID</th>
+    <th>Name</th>
+    </tr>
+    {% for x in myproducts %}
+    <tr>
+        <td>{{ x.name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+{% block content %} <p>1</p>{% endblock %}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETAIL</title>
+</head>
+<body>
+
+    <h1><a style="text-decoration:none;" href="/">Home</a></h1>
+
+    <h1>Student's Info Detail</h1>
+    <br>
+    {% if myproduct.image %}
+    <img src="{{myproduct.image.url}}" alt="Image" width="300" height="250">
+    {% else %}
+    <img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="Image" width="300" height="250">
+    {% endif %}
+    <h1>{{myproduct.name}}</h1>
+    {% if myproduct.age > 18 %}
+    <h1>Thieu nien </h1>
+    {% elif myproduct.age < 30 %}
+    <h1>Truong thanh </h1>
+    {% elif myproduct.age < 50 %}
+    <h1>Lap gia dinh </h1>
+    {% else %}
+    <h1>Ve huu </h1>
+    {% endif %}
+    <h1>Create date: {{myproduct.create_date}}</h1><br>
+    {% if myproduct.create_date > "2021-01-15" %}
+    <h1>New member</h1>
+    {% else %}
+    <h1>Member</h1>
+    {% endif %}
+    <a href="/products">Back to All Products</a>
+</body>
+</html>
